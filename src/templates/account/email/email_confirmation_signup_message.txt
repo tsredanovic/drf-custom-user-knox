@@ -1,0 +1,3 @@
+To verify your registration use:
+
+key: {{ key }}
