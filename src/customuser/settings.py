@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     # Apps
     'users',
+    'examples',
 
     # Swagger
     'drf_yasg',
@@ -171,7 +172,13 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        'users.authentication.ExpiringTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
 }
+
+# Token
+
+TOKEN_LIFETIME_SECONDS = 60
+
+REST_AUTH_TOKEN_CREATOR = 'users.authentication.custom_create_token'

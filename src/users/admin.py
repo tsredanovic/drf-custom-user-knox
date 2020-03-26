@@ -8,15 +8,15 @@ from users.models import CustomUser
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
 
-    list_display = ('email', 'name', 'is_staff', 'is_active', )
+    list_display = ('email', 'username', 'is_staff', 'is_active', )
     list_filter = ('is_staff', 'is_active', )
-    search_fields = ('email', 'name', )
+    search_fields = ('email', 'username', )
     ordering = ('email', )
 
     add_form = CustomUserCreationForm
     add_fieldsets = (
         ('General', {
-            'fields': ('email', 'name', )
+            'fields': ('email', 'username', )
         }),
         ('Password', {
             'fields': ('password1', 'password2', )
@@ -29,7 +29,7 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     fieldsets = (
         ('General', {
-            'fields': ('email', 'name', )
+            'fields': ('email', 'username', )
         }),
         ('Password', {
             'fields': ('password', )

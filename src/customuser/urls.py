@@ -7,6 +7,7 @@ from rest_framework import permissions
 
 api_patterns = [
     url(r'^api/v1/', include('users.api.urls')),
+    url(r'^api/v1/', include('examples.api.urls')),
 ]
 
 # Swagger configuration
