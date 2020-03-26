@@ -32,6 +32,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return self.email
 
     def save(self, **kwargs):
+        """
+        Example for unique random username generation.
+        """
         # if User is being created, generate new username
         if not self.id:
             highest_id_user = CustomUser.objects.order_by('id').last()
