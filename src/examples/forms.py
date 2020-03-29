@@ -8,6 +8,7 @@ from examples.models import ExampleTwo
 
 class ExampleTwoChangeForm(ModelForm):
     def clean(self):
+        super().clean()
         if self.instance.created_at.date() != timezone.now().date():
             raise ValidationError(
                 _('Not editable today'),
