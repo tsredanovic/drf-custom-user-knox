@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.forms import ModelForm
 
 from examples.forms import ExampleTwoChangeForm
-from examples.models import ExampleTwo
+from examples.models import ExampleTwo, ExampleThree
 
 
 class ExampleTwoAdmin(admin.ModelAdmin):
@@ -39,3 +39,4 @@ class ExampleTwoAdmin(admin.ModelAdmin):
 
 
 admin.site.register(ExampleTwo, ExampleTwoAdmin)
+admin.site.register(ExampleThree)

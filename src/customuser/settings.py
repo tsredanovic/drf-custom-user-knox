@@ -182,3 +182,7 @@ REST_FRAMEWORK = {
 TOKEN_LIFETIME_SECONDS = 60
 
 REST_AUTH_TOKEN_CREATOR = 'users.authentication.custom_create_token'
+
+# Media
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
